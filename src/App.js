@@ -5,6 +5,7 @@ import { hot } from 'react-hot-loader'
 import AuthenticatedRoute from './utils/AuthenticatedRoute'
 import Dashboard from './views/Dashboard'
 import LoginPage from './views/LoginPage'
+import Layout from './components/Layout'
 class App extends React.Component {
   constructor(props) {
     super(props)
@@ -16,12 +17,14 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router>
-        <div>
-          <AuthenticatedRoute exact path="/" component={Dashboard} />
-          <Route path="/login" component={LoginPage} />
-        </div>
-      </Router>
+      <Layout>
+        <Router>
+          <div>
+            <AuthenticatedRoute exact path="/" component={Dashboard} />
+            <Route path="/login" component={LoginPage} />
+          </div>
+        </Router>
+      </Layout>
     )
   }
 }
