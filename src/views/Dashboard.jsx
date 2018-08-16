@@ -1,10 +1,6 @@
 import React from 'react'
-import { AuthContext } from '../utils/AuthContext'
+import authenticated from '../utils/AuthenticatedComponent'
 
-const Dashboard = () => (
-  <AuthContext.Consumer>
-    {token => <p className="App-intro">List of apps will go here.</p>}
-  </AuthContext.Consumer>
-)
+const Dashboard = () => <p>Hello world!</p>
 
-export default Dashboard
+export default authenticated(Dashboard)

@@ -1,9 +1,8 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import { AuthContext } from './AuthContext'
+import { Provider } from './AuthContext'
 
 const AuthenticatedRoute = ({ component, ...rest }) => {
-  const { Provider } = AuthContext
   const Component = component
 
   return (

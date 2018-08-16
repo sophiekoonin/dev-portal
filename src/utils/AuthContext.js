@@ -5,4 +5,4 @@ const initialState = {
   user: null
 }
 
-export const AuthContext = React.createContext(initialState)
+export const { Provider, Consumer } = React.createContext(initialState)
