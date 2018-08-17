@@ -1,7 +1,6 @@
 import React from 'react'
 import context from './AuthContext'
 import { apiBasePath } from '../config'
-import Redirect from 'react-router/Redirect'
 
 class AuthProvider extends React.Component {
   constructor(props) {

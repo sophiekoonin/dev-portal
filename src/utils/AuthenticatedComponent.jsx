@@ -7,7 +7,11 @@ const authenticated = (Component, props) => () => {
   return (
     <Consumer>
       {({ accessToken }) => {
-        return accessToken ? <Component {...props} /> : <Redirect to="/login" />
+        return accessToken ? (
+          <Component {...props} accessToken={accessToken} />
+        ) : (
+          <Redirect to="/login" />
+        )
       }}
     </Consumer>
   )
