@@ -1,5 +1,6 @@
 import React from 'react'
-
+import Redirect from 'react-router-dom/Redirect'
+import context from '../../utils/AuthContext'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props)
@@ -22,32 +23,41 @@ class LoginPage extends React.Component {
   }
 
   render() {
+    const { Consumer } = context
     return (
-      <div>
-        <h1>Log in</h1>
-        <div className="login-form">
-          <form onSubmit={this.onSubmitLogin}>
-            <label htmlFor="login-user">Username</label>
-            <input
-              id="login-user"
-              required
-              value={this.state.username}
-              onChange={this.onUpdateUsername}
-            />
-            <label htmlFor="login-pass">Password</label>
-            <input
-              id="login-pass"
-              type="password"
-              required
-              value={this.state.password}
-              onChange={this.onUpdatePassword}
-            />
-            <button id="login-submit" type="submit">
-              Submit
-            </button>
-          </form>
-        </div>
-      </div>
+      <Consumer>
+        {({ accessToken, doLogin }) =>
+          accessToken !== null || accessToken === 'undefined' ? (
+            <Redirect to="/" />
+          ) : (
+            <div>
+              <h1>Log in</h1>
+              <div className="login-form">
+                <form onSubmit={e => this.onSubmitLogin(e, doLogin)}>
+                  <label htmlFor="login-user">Username</label>
+                  <input
+                    id="login-user"
+                    required
+                    value={this.state.username}
+                    onChange={this.onUpdateUsername}
+                  />
+                  <label htmlFor="login-pass">Password</label>
+                  <input
+                    id="login-pass"
+                    type="password"
+                    required
+                    value={this.state.password}
+                    onChange={this.onUpdatePassword}
+                  />
+                  <button id="login-submit" type="submit">
+                    Submit
+                  </button>
+                </form>
+              </div>
+            </div>
+          )
+        }
+      </Consumer>
     )
   }
 }

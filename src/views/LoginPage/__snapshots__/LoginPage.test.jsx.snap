@@ -1,46 +1,61 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders a login form 1`] = `
-<div>
-  <h1>
-    Log in
-  </h1>
-  <div
-    className="login-form"
-  >
-    <form
-      onSubmit={[Function]}
-    >
-      <label
-        htmlFor="login-user"
+exports[`redirects to dashboard when access token is not null or undefined 1`] = `
+<LoginPage>
+  <Consumer>
+    <Redirect
+      push={false}
+      to="/"
+    />
+  </Consumer>
+</LoginPage>
+`;
+
+exports[`renders a login form correctly when there is no access token in the state 1`] = `
+<LoginPage>
+  <Consumer>
+    <div>
+      <h1>
+        Log in
+      </h1>
+      <div
+        className="login-form"
       >
-        Username
-      </label>
-      <input
-        id="login-user"
-        onChange={[Function]}
-        required={true}
-        value=""
-      />
-      <label
-        htmlFor="login-pass"
-      >
-        Password
-      </label>
-      <input
-        id="login-pass"
-        onChange={[Function]}
-        required={true}
-        type="password"
-        value=""
-      />
-      <button
-        id="login-submit"
-        type="submit"
-      >
-        Submit
-      </button>
-    </form>
-  </div>
-</div>
+        <form
+          onSubmit={[Function]}
+        >
+          <label
+            htmlFor="login-user"
+          >
+            Username
+          </label>
+          <input
+            id="login-user"
+            onChange={[Function]}
+            required={true}
+            value=""
+          />
+          <label
+            htmlFor="login-pass"
+          >
+            Password
+          </label>
+          <input
+            id="login-pass"
+            onChange={[Function]}
+            required={true}
+            type="password"
+            value=""
+          />
+          <button
+            id="login-submit"
+            type="submit"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+    </div>
+  </Consumer>
+</LoginPage>
 `;
