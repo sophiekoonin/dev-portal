@@ -8,7 +8,9 @@ exports[`renders a login form 1`] = `
   <div
     className="login-form"
   >
-    <form>
+    <form
+      onSubmit={[Function]}
+    >
       <label
         htmlFor="login-user"
       >
@@ -16,6 +18,9 @@ exports[`renders a login form 1`] = `
       </label>
       <input
         id="login-user"
+        onChange={[Function]}
+        required={true}
+        value=""
       />
       <label
         htmlFor="login-pass"
@@ -24,9 +29,14 @@ exports[`renders a login form 1`] = `
       </label>
       <input
         id="login-pass"
+        onChange={[Function]}
+        required={true}
+        type="password"
+        value=""
       />
       <button
         id="login-submit"
+        type="submit"
       >
         Submit
       </button>
