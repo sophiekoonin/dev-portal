@@ -2,28 +2,22 @@ import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 
-import AuthenticatedRoute from './utils/AuthenticatedRoute'
 import Dashboard from './views/Dashboard'
 import LoginPage from './views/LoginPage'
 import Layout from './components/Layout'
+import AuthProvider from './utils/AuthProvider'
 class App extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      token: null,
-      user: null
-    }
-  }
-
   render() {
     return (
       <Layout>
-        <Router>
-          <div>
-            <AuthenticatedRoute exact path="/" component={Dashboard} />
-            <Route path="/login" component={LoginPage} />
-          </div>
-        </Router>
+        <AuthProvider>
+          <Router>
+            <div>
+              <Route exact path="/" component={Dashboard} />
+              <Route path="/login" component={LoginPage} />
+            </div>
+          </Router>
+        </AuthProvider>
       </Layout>
     )
   }

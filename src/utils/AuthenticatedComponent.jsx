@@ -1,9 +1,10 @@
 import React from 'react'
-import { Consumer } from './AuthContext'
+import context from './AuthContext'
 import Redirect from 'react-router-dom/Redirect'
 
-const authenticated = ({ component }) => props => {
+const authenticated = component => props => {
   const Component = component
+  const { Consumer } = context
   return (
     <Consumer>
       {({ token }) =>
