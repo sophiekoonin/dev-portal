@@ -6,8 +6,8 @@ const authenticated = (Component, props) => () => {
   const { Consumer } = context
   return (
     <Consumer>
-      {({ token }) => {
-        return token ? <Component {...props} /> : <Redirect to="/login" />
+      {({ accessToken }) => {
+        return accessToken ? <Component {...props} /> : <Redirect to="/login" />
       }}
     </Consumer>
   )

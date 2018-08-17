@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getAccessToken makes a POST request to /login with the given username and password 1`] = `
+Array [
+  "https://guarded-thicket-22918.herokuapp.com/login",
+  Object {
+    "body": "{\\"username\\":\\"myUsername\\",\\"password\\":\\"myPassword\\"}",
+    "headers": Object {
+      "content-type": "application/json",
+    },
+    "method": "POST",
+  },
+]
+`;

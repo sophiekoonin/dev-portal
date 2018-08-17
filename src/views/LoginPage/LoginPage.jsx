@@ -16,9 +16,9 @@ class LoginPage extends React.Component {
     this.setState({ password: e.target.value })
   }
 
-  onSubmitLogin = e => {
-    e.preventDefault
-    this.props.onSubmitLogin(...this.state)
+  onSubmitLogin = (e, doLogin) => {
+    e.preventDefault()
+    doLogin(this.state.username, this.state.password)
   }
 
   render() {
