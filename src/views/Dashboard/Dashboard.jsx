@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import moment from 'moment'
 import authenticated from '../../utils/AuthenticatedComponent'
 import { apiBasePath } from '../../config'
 import './dashboard.css'
@@ -21,7 +22,8 @@ class Dashboard extends React.Component {
     const { apps } = this.state
     const allApps = apps.map(app => (
       <div className="dashboard-app" key={app.id}>
-        {app.name}
+        <span className="app-title">{app.name}</span>
+        <p>Created: {moment(app.created).format('DD/MM/YY HH:mm')}</p>
       </div>
     ))
     return (

@@ -8,9 +8,14 @@
   grid-column-gap: 16px;
 }
 
+.app-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
 .dashboard-app {
   color: black;
   display: flex;
+  flex-direction: column;
   text-align: center;
   min-height: 10vh;
   padding: 30px;
