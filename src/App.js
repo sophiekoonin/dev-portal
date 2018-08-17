@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { hot } from 'react-hot-loader'
 
 import Dashboard from './views/Dashboard'
-import LoginPage from './views/LoginPage'
+import LoginPage from './views/LoginPage/LoginPage'
 import Layout from './components/Layout'
 import AuthProvider from './utils/AuthProvider'
 class App extends React.Component {

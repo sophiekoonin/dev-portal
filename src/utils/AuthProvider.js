@@ -5,7 +5,7 @@ class AuthProvider extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      token: 'hello',
+      token: null,
       user: null
     }
   }
