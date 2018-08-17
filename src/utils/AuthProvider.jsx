@@ -13,8 +13,6 @@ class AuthProvider extends React.Component {
     }
   }
 
-  redirectToDashboard = () => <Redirect to="/" />
-
   getAccessToken = async (username, password) => {
     await this.setState({ hasError: false })
     const res = await fetch(`${apiBasePath}/login`, {

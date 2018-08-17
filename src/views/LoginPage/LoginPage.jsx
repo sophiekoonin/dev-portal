@@ -27,7 +27,7 @@ class LoginPage extends React.Component {
     return (
       <Consumer>
         {({ accessToken, doLogin }) =>
-          accessToken !== null || accessToken === 'undefined' ? (
+          accessToken !== null && accessToken !== 'undefined' ? (
             <Redirect to="/" />
           ) : (
             <div>

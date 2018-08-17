@@ -2,7 +2,7 @@ import React from 'react'
 jest.mock('react-router-dom/Redirect')
 
 beforeEach(() => {
-  jest.resetAllMocks()
+  jest.resetModules()
 })
 
 const getLoginPageWithContext = (
