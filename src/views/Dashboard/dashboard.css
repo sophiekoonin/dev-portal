@@ -1,0 +1,18 @@
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  margin: 0 auto;
+  width: 50%;
+  grid-row-gap: 16px;
+  grid-column-gap: 16px;
+}
+
+.dashboard-app {
+  color: black;
+  display: flex;
+  text-align: center;
+  min-height: 10vh;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.5);
+}

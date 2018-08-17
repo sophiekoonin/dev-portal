@@ -1,6 +1,7 @@
-import React from 'react'
-import authenticated from '../utils/AuthenticatedComponent'
-import { apiBasePath } from '../config'
+import React, { Fragment } from 'react'
+import authenticated from '../../utils/AuthenticatedComponent'
+import { apiBasePath } from '../../config'
+import './dashboard.css'
 
 class Dashboard extends React.Component {
   constructor(props) {
@@ -18,9 +19,17 @@ class Dashboard extends React.Component {
 
   render() {
     const { apps } = this.state
-    const allApps = apps.forEach(app => <div key={app.id}>{app.name}</div>)
-
-    return <div>{allApps}</div>
+    const allApps = apps.map(app => (
+      <div className="dashboard-app" key={app.id}>
+        {app.name}
+      </div>
+    ))
+    return (
+      <Fragment>
+        <h2>App dashboard</h2>
+        <div className="dashboard-container">{allApps}</div>
+      </Fragment>
+    )
   }
 }
 

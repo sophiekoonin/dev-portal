@@ -1,6 +1,7 @@
 import React from 'react'
 import Redirect from 'react-router-dom/Redirect'
 import context from '../../utils/AuthContext'
+import './login.css'
 class LoginPage extends React.Component {
   constructor(props) {
     super(props)
