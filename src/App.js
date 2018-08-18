@@ -9,7 +9,6 @@ import AuthProvider from './utils/AuthProvider'
 import { rootPath, loginPath } from './config'
 class App extends React.Component {
   render() {
-    console.log(process.env)
     return (
       <Layout>
         <AuthProvider>
