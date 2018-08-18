@@ -2,6 +2,8 @@ import React from 'react'
 import context from './AuthContext'
 import Redirect from 'react-router-dom/Redirect'
 
+import { loginPath } from '../config'
+
 const authenticated = (Component, props) => () => {
   const { Consumer } = context
   return (
@@ -10,7 +12,7 @@ const authenticated = (Component, props) => () => {
         return accessToken ? (
           <Component {...props} accessToken={accessToken} />
         ) : (
-          <Redirect to="/login" />
+          <Redirect to={loginPath} />
         )
       }}
     </Consumer>

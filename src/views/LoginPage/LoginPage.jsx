@@ -1,6 +1,8 @@
 import React from 'react'
 import Redirect from 'react-router-dom/Redirect'
+
 import context from '../../utils/AuthContext'
+import { rootPath } from '../../config'
 import './login.css'
 class LoginPage extends React.Component {
   constructor(props) {
@@ -29,7 +31,7 @@ class LoginPage extends React.Component {
       <Consumer>
         {({ accessToken, doLogin }) =>
           accessToken !== null && accessToken !== 'undefined' ? (
-            <Redirect to="/" />
+            <Redirect to={rootPath} />
           ) : (
             <div>
               <h1>Log in</h1>
