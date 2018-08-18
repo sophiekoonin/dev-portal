@@ -13,8 +13,8 @@ class App extends React.Component {
         <AuthProvider>
           <Router>
             <div>
-              <Route exact path="/" component={Dashboard} />
-              <Route path="/login" component={LoginPage} />
+              <Route exact path="/dev-portal/" component={Dashboard} />
+              <Route path="/dev-portal/login" component={LoginPage} />
             </div>
           </Router>
         </AuthProvider>
